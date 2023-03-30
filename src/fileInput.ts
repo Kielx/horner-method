@@ -54,22 +54,21 @@ const readFile = (file: File) => {
 /**
  * Funkcja, która oblicza wartość wielomianu metodą Hornera
  * 
- * @param wielomian Tablica współczynników wielomianu
- * @param n Stopień wielomianu
+ * @param wspolczynnikiWielomianu Tablica współczynników wielomianu
  * @returns Wartość wielomianu
  *  
  */
-const horner = (wielomian: number[], n: number) =>
+const horner = (wspolczynnikiWielomianu: number[]) =>
 {
  
     const x = document.querySelector<HTMLInputElement>("#x")!.valueAsNumber
     // Inicjalizacja wyniku
-    let res = wielomian[0];
+    let res = wspolczynnikiWielomianu[0];
  
     // Oblicz wartość wielomianu metodą Hornera
-    for (let i = 1; i < n; i++)
+    for (let i = 1; i < wspolczynnikiWielomianu.length; i++)
         res = res *
-                  x + wielomian[i];
+                  x + wspolczynnikiWielomianu[i];
  
     return res
 }
@@ -78,7 +77,7 @@ const horner = (wielomian: number[], n: number) =>
  * Aktualizuje wynik obliczeń, wyświetla błędy jeśli istnieją
  */
 const updateResult = () => {
-  const result = horner(numberInputsArray, numberInputsArray.length)
+  const result = horner(numberInputsArray)
   const resultDiv = document.querySelector<HTMLDivElement>("#result")!
   const errorsDiv = document.querySelector<HTMLDivElement>("#errors")!
   const x = document.querySelector<HTMLInputElement>("#x")!.valueAsNumber
