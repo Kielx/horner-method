@@ -11,7 +11,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
      <div id="inputResult"></div>
      <div id="xContainer">
      <label for="x">Podaj wartość X</label>
-     <input type="number" id="x" value="0" />
+     <input type="number" id="x" value="0" step="0.1" />
      </div>
      <div id="errors"></div>
      <div id="result">Wybierz plik z danymi wejściowymi oraz podaj wartość X by obliczyć wartość funkcji wielomianowej</div>

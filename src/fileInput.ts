@@ -133,6 +133,12 @@ const updateResult = () => {
     errors.noX.enabled = false
     errorsDiv.innerHTML = ''
     errorsDiv.style.display = 'none'
+    if (isNaN(result)){
+      resultDiv.innerHTML = 'Wygenerowany wynik nie jest prawidłową liczbą. Upewnij się, że podałeś poprawne dane wejściowe, tj. plik, który zawiera tylko liczby w kolejnych wierszach.'
+      resultDiv.style.color = 'red'
+      return
+    }
+    resultDiv.style.color = 'white'
     resultDiv.innerHTML = `Wynik to: ${result}`
   }
 }
