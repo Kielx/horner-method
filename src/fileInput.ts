@@ -43,7 +43,7 @@ const readFile = (file: File) => {
     const inputs = event.target?.result
     const inputsArray = inputs?.toString().split(/\r?\n/)
     if (inputsArray) {
-      numberInputsArray = inputsArray?.map((input) => Number(input))
+      numberInputsArray = inputsArray?.map((input) => Number(input)).reverse()
       updateResult()
     }
   })
